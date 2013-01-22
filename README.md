@@ -13,6 +13,8 @@ from memory and decided to open source it. If you’re a nifty PHP dev:
 2. Please consider helping to tidy it up. Better structured, better documented,
    perhaps having some checks in place to make sure the values passed in are
    integers, and that they aren’t big enough to make a 1000k loop, and so on.
+3. It would also be pretty cool to get a JS port that can be hosted on GitHub
+   Pages… ;)
 
 To run the code without having a local environment set up, copy and paste it
 into [here](http://codepad.viper-7.com/) and adjust your values accordingly.
