@@ -1,3 +1,4 @@
+<pre>
 <?php
 
     // How many columns would you like in your grid system?
@@ -13,24 +14,21 @@
     $totalWidth  = $totalCols * ($colWidth + $gutterWidth);    
     $fluidGutterWidth = round(($gutterWidth / $totalWidth) * 100, 3);
 
-?>
-
-<pre>
+    echo <<<CSS
 .grid-wrapper{
-    max-width:<?php echo $totalWidth . 'px;<br>'; ?>
-    margin-left:-<?php echo $fluidGutterWidth . '%;<br>'; ?>
+    max-width:{$totalWidth}px;
+    margin-left:-{$fluidGutterWidth}%;
     overflow:hidden;
 }
 .grid{
     float:left;
-    margin-left:<?php echo $fluidGutterWidth . '%;<br>'; ?>
+    margin-left:{$fluidGutterWidth}%;
 }
-<?php
+
+CSS;
 
     // Loop through all our possible column widths:
     for($i = 1; $i <= $totalCols; $i++){
-        
-        echo '.grid-' . $i . '{ ';
         
         /**
          * The number of columns into the loop, plus the corresponding number
@@ -38,12 +36,13 @@
          * converted to a percentage (to three decimal places).
          */
         $cssWidth = round((((($i * $colWidth) + ($i * $gutterWidth)) - $gutterWidth) / $totalWidth) * 100, 3);
-        
-        echo 'width:' . $cssWidth . '%;';
-        
-        
-        echo ' }<br>';
-        
+
+        echo <<<CSS
+.grid-{$i}{width:{$cssWidth}%;}
+
+CSS;
+    
     }
+
 ?>
 </pre>
