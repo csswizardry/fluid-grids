@@ -37,7 +37,12 @@
          * of gutters, minus one gutter (which is taken up as `margin-left`)
          * converted to a percentage (to three decimal places).
          */
-        $cssWidth = round((((($i * $colWidth) + ($i * $gutterWidth)) - $gutterWidth) / $totalWidth) * 100, 3);
+         
+        $totalColWidth = $i * $colWidth;
+        $totalGutterWidth = $i * $gutterWidth;
+        $finalGutterWidth = ($totalColWidth + $totalGutterWidth) - $gutterWidth;
+        
+        $cssWidth = round(($finalGutterWidth / $totalWidth) * 100, 3);
         
         echo 'width:' . $cssWidth . '%;';
         
