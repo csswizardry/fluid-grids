@@ -20,7 +20,7 @@
      */
     function calculateWidth($column)
     {    
-        return round((((($i * $colWidth) + ($i * $gutterWidth)) - $gutterWidth) / $totalWidth) * 100, 3);
+        return round((((($i * COL_WIDTH) + ($i * GUTTER_WIDTH)) - GUTTER_WIDTH) / $totalWidth) * 100, 3);
     }
 
 ?>
