@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fluid Grids</title>
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu:300,500,300italic">
+    <link rel="stylesheet" href="http://csswizardry.com/css/csswizardry.min.css">
+    <link rel="stylesheet" href="fluid-grids.css">
+
+    <link rel="shortcut icon" href="http://csswizardry.com/icon.png">
+</head>
+
+<body>
+    <!-- Hidden preload `div` to fetch images before CSS needs them. -->
+    <div class="ಠ_ಠ">
+        <img src="http://csswizardry.com/img/css/sprites/main.svg" alt="">
+    </div>
+
+    <div class="wrapper">
+        
+        <header class="page-head">
+            
+            <a href="/" class="site-logo">
+                <img src="http://csswizardry.com/img/dot.gif" alt="CSS Wizardry" class="s  s--csswizardry-logo">
+            </a>
+
+            
+        </header><!-- /page-head -->
+
+        <div class="gw">
+            
+            <div class="g  one-whole  desk-six-tenths">
+
+            	<h1>Fluid Grid Generator</h1>
+
+            	<p>Grid system generator as outlined in <a href="http://csswizardry.com/2011/06/fluid-grid-calculator/">this blog post</a>.</p>
+
+                <label for="total-cols">Total Columns</label>
+                <input id="total-cols" name="total-cols" type="number" value="16">
+
+                <label for="col-width">Column Width (px)</label>
+                <input id="col-width" name="col-width" type="number" value="40">
+
+                <label for="gutter-width">Gutter Width</label>
+                <input id="gutter-width" name="gutter-width" type="number" value="20">
+
+                <!-- Template for the CSS -->
+                <script type="text/html" id="css-template">
+.grid-wrapper{
+    max-width: {{ totalWidth }}px;
+    margin-left: -{{ fluidGutterWidth }}%;
+    overflow:hidden;
+}
+
+.grid{
+    float:left;
+    margin-left: {{ fluidGutterWidth }}%;
+}
+{% for col in cols %}
+.grid-{{ loop.index }} {
+    width: {{ col }}%;
+}
+{% endfor %}
+               	</script>
+
+               	<!-- Preview of the grid system -->
+                <div class="preview">
+
+                </div>
+
+                <label for="code">Copy and paste the CSS below.</label>
+                <textarea class="code"></textarea>
+
+            </div>
+            
+        </div>
+        
+    </div><!-- /wrapper -->
+
+    <footer class="page-foot"><div class="wrapper">
+
+        <p>
+        	&copy; 2013 <a href="http://twitter.com/csswizardry">Harry Roberts</a> and <a href="http://twitter.com/MrRio">James Hall</a>.
+        	The source code of this project is <a href="https://github.com/csswizardry/fluid-grids">hosted on GitHub</a>
+        </p>
+
+    </footer><!-- /wrapper /page-foot -->
+    
+    <div class="strip"></div>
+	<!-- Scripts at the end of the page for performance -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script src="http://paularmstrong.github.com/swig/js/swig.pack.min.js"></script>
+	<script src="fluid-grids.js"></script>
+</body>
+</html>

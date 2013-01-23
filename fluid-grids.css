@@ -1,0 +1,20 @@
+
+
+label, input, textarea {
+	float: left;
+	clear: left;
+}
+
+input {
+	margin-bottom: 10px;
+}
+
+.code {
+	clear: left;
+}
+
+textarea {
+	margin-bottom: 20px;
+	width: 100%;
+	height: 300px;
+}
