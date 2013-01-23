@@ -5,10 +5,17 @@
  * @license MIT 
  */
 var FluidGrids = function() {
+
 	/**
-	 * Private properties
+	 * Private functions
 	 */
 
+	/**
+	 * Rounding function
+	 * @param  {float}	value		The value to be rounded
+	 * @param  {int}	precision	Precision
+	 * @return {float}				Returns rounded number
+	 */
 	var round = function(value, precision) {
 
 		// Multiply number by amount we want our round precision to be
@@ -19,10 +26,18 @@ var FluidGrids = function() {
 
 	};
 
+	/**
+	 * Grabs the value from the UI
+	 * @param  {string} selector	jQuery selector
+	 * @return {int}				Integer value
+	 */
 	var getVal = function(selector) {
 		return parseInt($(selector).val(), 10);
 	};
 
+	/**
+	 * Calculate the grid and render it into the page
+	 */
 	var calculate = function() {
 
 		var data = {
@@ -55,6 +70,9 @@ var FluidGrids = function() {
 	 * Public functions
 	 */
 	return {
+		/**
+		 * Init
+		 */
 		init: function() {
 			// Attach event handlers
 			$('#total-cols, #col-width, #gutter-width').change(function() {
