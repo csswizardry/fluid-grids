@@ -2,7 +2,7 @@
 /**
  * FluidGrids Generator
  * @copyright 2013 James Hall and Harry Roberts
- * @license MIT 
+ * @license Apache License
  */
 var FluidGrids = function() {
 
