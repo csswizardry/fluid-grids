@@ -77,6 +77,8 @@ var FluidGrids = function() {
 			// Attach event handlers
 			$('#total-cols, #col-width, #gutter-width').change(function() {
 				calculate();
+			}).keyup(function() {
+				calculate();
 			});
 
 			calculate();
